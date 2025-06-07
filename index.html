@@ -7,13 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet"> <style>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <style>
         body {
             font-family: 'Noto Sans SC', sans-serif;
             background-color: #f3f4f6;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Align to top for better scrolling on smaller screens */
+            align-items: flex-start;
             min-height: 100vh;
             padding: 20px;
         }
@@ -23,7 +24,7 @@
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 768px; /* Max width for larger screens */
+            max-width: 768px;
             margin-top: 20px;
             margin-bottom: 20px;
         }
@@ -35,7 +36,7 @@
             border: 1px solid #e5e7eb;
         }
         .question-title {
-            font-size: 1.25rem; /* 20px */
+            font-size: 1.25rem;
             font-weight: 600;
             color: #1f2937;
             margin-bottom: 16px;
@@ -92,7 +93,6 @@
             font-weight: 500;
             text-align: center;
         }
-        /* Timetable specific styles */
         .timetable-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
@@ -100,41 +100,40 @@
             margin-top: 20px;
             border: 1px solid #e5e7eb;
             border-radius: 8px;
-            overflow: hidden; /* Ensures rounded corners apply to content */
+            overflow: hidden;
         }
         .timetable-header {
             background-color: #e0e7ff;
             font-weight: 600;
             padding: 8px 4px;
             text-align: center;
-            font-size: 0.875rem; /* 14px */
+            font-size: 0.875rem;
             color: #3730a3;
         }
         .timetable-cell {
             background-color: #f0f4ff;
             padding: 8px 4px;
             text-align: center;
-            font-size: 0.875rem; /* 14px */
+            font-size: 0.875rem;
             color: #4b5563;
-            min-height: 60px; /* Ensure cells have some height */
+            min-height: 60px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            word-break: break-word; /* Allow long text to break */
+            word-break: break-word;
             line-height: 1.2;
         }
         .course-cell {
-            background-color: #bfdbfe; /* Light blue */
-            color: #1e40af; /* Darker blue text */
+            background-color: #bfdbfe;
+            color: #1e40af;
             font-weight: 500;
         }
         .homework-cell {
-            background-color: #d1fae5; /* Light green */
-            color: #065f46; /* Darker green text */
+            background-color: #d1fae5;
+            color: #065f46;
             font-weight: 500;
         }
-        /* Summary display styles */
         .summary-details-container {
             background-color: #f9fafb;
             padding: 16px;
@@ -146,7 +145,6 @@
             display: flex;
             padding: 8px 0;
             border-bottom: 1px dashed #e5e7eb;
-            /* Use flex for equal columns, remove fixed width from label */
         }
         .summary-item:last-child {
             border-bottom: none;
@@ -155,26 +153,33 @@
             font-weight: 600;
             color: #374151;
             text-align: left;
-            flex: 1; /* Take equal space */
+            flex: 1;
         }
         .summary-value {
             color: #4b5563;
-            text-align: left; /* Left-align the value */
-            flex: 1; /* Take equal space */
-            margin-left: 8px; /* Small gap between label and value */
+            text-align: left;
+            flex: 1;
+            margin-left: 8px;
         }
-        /* Slogan specific styles */
         .slogan-style {
-            font-family: 'Ma Shan Zheng', cursive; /* Changed to Ma Shan Zheng font */
-            font-size: 1.875rem; /* Equivalent to text-3xl for visual alignment with title */
-            font-weight: 600; /* Maintain boldness */
-            margin-top: 1.5rem; /* Adjusted spacing */
-            margin-bottom: 1.5rem; /* Adjusted spacing */
-            background-image: linear-gradient(to bottom right, #FF0000, #0000FF); /* Changed to Red to Blue gradient, top-left to bottom-right */
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 1.875rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            background-image: linear-gradient(to bottom right, #FF0000, #0000FF);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-align: center; /* Ensure it remains centered */
+            text-align: center;
+        }
+        .contact-area-integrated {
+            margin-top: 1rem;
+            padding: 16px;
+            background-color: #f9fafb;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            text-align: left;
         }
     </style>
 </head>
@@ -236,8 +241,7 @@
 
         <div class="question-section hidden" id="question1-sub-section">
             <h2 class="question-title">1a. 请选择具体课程或考试科目。</h2>
-            <div id="sub-program-options">
-                </div>
+            <div id="sub-program-options"></div>
         </div>
 
         <div class="question-section" id="question3-section">
@@ -295,7 +299,8 @@
                     <input type="radio" name="grade_level" value="9年级"> 9年级
                 </label>
                 <label class="radio-option">
-                    <input type="radio" name="grade_level" value="10年级"> 10年级 </label>
+                    <input type="radio" name="grade_level" value="10年级"> 10年级
+                </label>
                 <label class="radio-option">
                     <input type="radio" name="grade_level" value="11年级"> 11年级
                 </label>
@@ -358,8 +363,7 @@
 
         <div class="question-section hidden" id="question5-sub-section">
             <h2 class="question-title" id="question5-sub-title">5a. 请选择您的分数/等级：</h2>
-            <div id="english-certificate-sub-options">
-                </div>
+            <div id="english-certificate-sub-options"></div>
         </div>
 
         <div class="question-section" id="question7-section">
@@ -379,27 +383,27 @@
 
         <div class="question-section hidden" id="question6-sub-section">
             <h2 class="question-title">6a. 请选择期望的上课时间：</h2>
-            <div id="course-days-options">
-                </div>
+            <div id="course-days-options"></div>
         </div>
 
         <div class="question-section hidden" id="question8-section">
             <h2 class="question-title">7. 学员每周将参加的作业辅导频率（作业辅导30分钟/次）：</h2>
-            <div class="options-group" id="homework-frequency-options">
-                </div>
+            <div class="options-group" id="homework-frequency-options"></div>
         </div>
 
         <button class="submit-button" id="submit-form">提交表单</button>
 
         <div class="message-box hidden" id="submission-message">
             <div id="error-message-display" class="text-red-700 font-bold mb-4 hidden"></div>
-            <h3 class="text-xl font-bold text-gray-800 mb-4" id="summary-header">您的报名信息概览</h3>
-            <div id="summary-details" class="summary-details-container mb-6">
-                </div>
+            
+            <h3 class="text-xl font-bold text-gray-800 mb-4" id="summary-header">您的报名信息概览：</h3>
+            <div id="summary-details" class="summary-details-container mb-6"></div>
+            
+            <h3 class="text-xl font-bold text-gray-800 mb-4 mt-8" id="timetable-header">学员每周学习安排概览：</h3>
             <div id="timetable-display" class="hidden"></div>
 
-            <div class="question-section hidden" id="contact-info-section-after-summary">
-                <h2 class="question-title">8. 请留下您的联系方式，我们的专业顾问将尽快与您联系。</h2>
+            <h3 class="text-xl font-bold text-gray-800 mb-4 mt-8 hidden" id="contact-header">您的联系方式：</h3>
+            <div class="hidden contact-area-integrated" id="contact-input-area">
                 <div class="options-group" id="contact-method-options">
                     <label class="radio-option">
                         <input type="radio" name="contact_method" value="电话"> 电话
@@ -427,522 +431,452 @@
     </div>
 
     <script>
-        console.log("Script loaded and started!"); // Added this line for initial debug check
+        document.addEventListener("DOMContentLoaded", function() {
+            try {
+                console.log("Script loaded and started!");
 
-        const programOptionsContainer = document.getElementById('program-options');
-        const question1SubSection = document.getElementById('question1-sub-section');
-        const subProgramOptionsDiv = document.getElementById('sub-program-options');
-        const submitFormButton = document.getElementById('submit-form'); // Renamed to avoid conflict
-        const submissionMessage = document.getElementById('submission-message');
-        const summaryDetails = document.getElementById('summary-details');
-        const timetableDisplay = document.getElementById('timetable-display');
+                const programOptionsContainer = document.getElementById('program-options');
+                const question1SubSection = document.getElementById('question1-sub-section');
+                const subProgramOptionsDiv = document.getElementById('sub-program-options');
+                const submitFormButton = document.getElementById('submit-form');
+                const submissionMessage = document.getElementById('submission-message');
+                const summaryDetails = document.getElementById('summary-details');
+                const timetableDisplay = document.getElementById('timetable-display');
+                const errorMessageDisplay = document.getElementById('error-message-display');
+                const summaryHeader = document.getElementById('summary-header');
+                const timetableHeader = document.getElementById('timetable-header'); 
+                const question5SubSection = document.getElementById('question5-sub-section');
+                const englishCertificateOptionsContainer = document.getElementById('english-certificate-options');
+                const englishCertificateSubOptionsDiv = document.getElementById('english-certificate-sub-options');
+                const question6SubSection = document.getElementById('question6-sub-section');
+                const courseDaysOptionsDiv = document.getElementById('course-days-options');
+                const question7MainSection = document.getElementById('question8-section');
+                const homeworkFrequencyOptionsDiv = document.getElementById('homework-frequency-options');
+                const contactInputArea = document.getElementById('contact-input-area');
+                const contactHeader = document.getElementById('contact-header'); 
+                const contactMethodOptions = document.getElementById('contact-method-options');
+                const contactDetailInputContainer = document.getElementById('contact-detail-input-container');
+                const contactDetailLabel = document.getElementById('contact-detail-label');
+                const contactDetailInput = document.getElementById('contact-detail');
+                const submitContactInfoButton = document.getElementById('submit-contact-info');
+                const finalContactMessage = document.getElementById('final-contact-message');
 
-        const errorMessageDisplay = document.getElementById('error-message-display');
-        const summaryHeader = document.getElementById('summary-header');
-        // const finalContactMessage = document.getElementById('final-contact-message'); // This will now be inside contact-info-section-after-summary
+                const systemPrograms = ['IBDP', 'MYP', 'PYP', 'AP', 'GCSE', 'IGCSE', 'A-LEVEL'];
+                const englishCertificatesWithSubLevels = [
+                    'IELTS', 'TOEFL', 'PTE Academic',
+                    '剑桥通用英语 FCE (B2 First)', '剑桥通用英语 PET (B1 Preliminary)', '剑桥通用英语 KET (A2 Key)',
+                    'TOEFL Junior'
+                ];
+                const weekdays = ['周一', '周二', '周三', '周四', '周五', '周六', '周日'];
 
-        const question5SubSection = document.getElementById('question5-sub-section');
-        const englishCertificateOptionsContainer = document.getElementById('english-certificate-options');
-        const englishCertificateSubOptionsDiv = document.getElementById('english-certificate-sub-options');
+                const subOptions = {
+                    'IBDP': ['IBDP 语言与文学 (Language and Literature)', 'IBDP 语言习得 (Language Acquisition)','IBDP 个体与社会 (Individuals and Societies)', 'IBDP 科学 (Sciences)','IBDP 数学 (Mathematics)', 'IBDP 艺术 (The Arts)','IBDP 知识论 (TOK) / 拓展论文 (EE) / 创造、行动与服务 (CAS)'],
+                    'MYP': ['MYP 语言与文学 (Language and Literature)', 'MYP 语言习得 (Language Acquisition)','MYP 个体与社会 (Individuals and Societies)', 'MYP 科学 (Sciences)','MYP 数学 (Mathematics)', 'MYP 艺术 (Arts)','MYP 体育与健康教育 (Physical and Health Education)', 'MYP 设计 (Design)','MYP 个人项目 (Personal Project)'],
+                    'PYP': ['PYP 语言 (Language)', 'PYP 数学 (Mathematics)', 'PYP 科学 (Science)','PYP 社会研究 (Social Studies)', 'PYP 艺术 (Arts)','PYP 体育、社会与个人教育 (PSPE)', 'PYP 探究单元 (Units of Inquiry)'],
+                    'AP': ['AP 微积分 AB/BC', 'AP 统计学', 'AP 物理 1/2/C', 'AP 化学', 'AP 生物','AP 经济学 (微观/宏观)', 'AP 历史 (美国/世界/欧洲)', 'AP 心理学','AP 计算机科学 A/原理', 'AP 英语语言与写作', 'AP 英语文学与写作','其他AP科目 (请联系顾问)'],
+                    'GCSE': ['GCSE/IGCSE 数学', 'GCSE/IGCSE 英语 (第一语言/第二语言)', 'GCSE/IGCSE 物理','GCSE/IGCSE 化学', 'GCSE/IGCSE 生物', 'GCSE/IGCSE 历史', 'GCSE/IGCSE 地理','GCSE/IGCSE 商务学习', 'GCSE/IGCSE 经济学', '其他GCSE/IGCSE科目 (请联系顾问)'],
+                    'IGCSE': ['GCSE/IGCSE 数学', 'GCSE/IGCSE 英语 (第一语言/第二语言)', 'GCSE/IGCSE 物理','GCSE/IGCSE 化学', 'GCSE/IGCSE 生物', 'GCSE/IGCSE 历史', 'GCSE/IGCSE 地理','GCSE/IGCSE 商务学习', 'GCSE/IGCSE 经济学', '其他GCSE/IGCSE科目 (请联系顾问)'],
+                    'A-LEVEL': ['A-Level 数学 (或进阶数学)', 'A-Level 物理', 'A-Level 化学','A-Level 生物', 'A-Level 经济学', 'A-Level 商务','A-Level 计算机科学', 'A-Level 历史', 'A-Level 英语文学','其他A-Level科目 (请联系顾问)']
+                };
 
-        const question6MainSection = document.getElementById('question7-section');
-        const question6SubSection = document.getElementById('question6-sub-section');
-        const courseDaysOptionsDiv = document.getElementById('course-days-options');
-        const question7MainSection = document.getElementById('question8-section');
-        const homeworkFrequencyOptionsDiv = document.getElementById('homework-frequency-options');
+                const englishSubScores = {
+                    'TOEFL': ['113-120分', '102-112分', '79-101分', '46-78分', '32-45分', '<32分'],
+                    'IELTS': ['8.5-9.0分', '7.5-8.0分', '6.5-7.0分', '5.5-6.0分', '4.5-5.0分', '<4.5分'],
+                    'TOEFL Junior': ['600-620分 (Emerging)', '625-725分 (Progressing)','730-780分 (Expanding)', '785-860分 (Accomplished)','865-900分 (Superior)'],
+                    'PTE Academic': ['85-90分', '76-84分', '59-75分', '43-58分', '30-42分', '10-29分'],
+                    '剑桥通用英语 KET (A2 Key)': ['A级', 'B级', 'C级'],
+                    '剑桥通用英语 PET (B1 Preliminary)': ['A级', 'B级', 'C级'],
+                    '剑桥通用英语 FCE (B2 First)': ['A级', 'B级', 'C级']
+                };
 
-        // New contact info elements (after submission)
-        const contactInfoSectionAfterSummary = document.getElementById('contact-info-section-after-summary');
-        const contactMethodOptions = document.getElementById('contact-method-options');
-        const contactDetailInputContainer = document.getElementById('contact-detail-input-container');
-        const contactDetailLabel = document.getElementById('contact-detail-label');
-        const contactDetailInput = document.getElementById('contact-detail');
-        const submitContactInfoButton = document.getElementById('submit-contact-info');
-        const finalContactMessage = document.getElementById('final-contact-message'); // Corrected reference
+                const courseDayOptionsMap = {
+                    '1': ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+                    '2': ['周一/周三', '周二/周四', '周二/周五', '周三/周六', '周四/周日'],
+                    '3': ['周一/周三/周五', '周二/周四/周六']
+                };
 
-
-        const systemPrograms = ['IBDP', 'MYP', 'PYP', 'AP', 'GCSE', 'IGCSE', 'A-LEVEL'];
-        const englishCertificatesWithSubLevels = [
-            'IELTS', 'TOEFL', 'PTE Academic',
-            '剑桥通用英语 FCE (B2 First)', '剑桥通用英语 PET (B1 Preliminary)', '剑桥通用英语 KET (A2 Key)',
-            'TOEFL Junior'
-        ];
-        const weekdays = ['周一', '周二', '周三', '周四', '周五', '周六', '周日'];
-
-        let selectedCourseDays = []; // To store the selected course days for timetable generation
-
-        const subOptions = {
-            'IBDP': [
-                'IBDP 语言与文学 (Language and Literature)', 'IBDP 语言习得 (Language Acquisition)',
-                'IBDP 个体与社会 (Individuals and Societies)', 'IBDP 科学 (Sciences)',
-                'IBDP 数学 (Mathematics)', 'IBDP 艺术 (The Arts)',
-                'IBDP 知识论 (TOK) / 拓展论文 (EE) / 创造、行动与服务 (CAS)'
-            ],
-            'MYP': [
-                'MYP 语言与文学 (Language and Literature)', 'MYP 语言习得 (Language Acquisition)',
-                'MYP 个体与社会 (Individuals and Societies)', 'MYP 科学 (Sciences)',
-                'MYP 数学 (Mathematics)', 'MYP 艺术 (Arts)',
-                'MYP 体育与健康教育 (Physical and Health Education)', 'MYP 设计 (Design)',
-                'MYP 个人项目 (Personal Project)'
-            ],
-            'PYP': [
-                'PYP 语言 (Language)', 'PYP 数学 (Mathematics)', 'PYP 科学 (Science)',
-                'PYP 社会研究 (Social Studies)', 'PYP 艺术 (Arts)',
-                'PYP 体育、社会与个人教育 (PSPE)', 'PYP 探究单元 (Units of Inquiry)'
-            ],
-            'AP': [
-                'AP 微积分 AB/BC', 'AP 统计学', 'AP 物理 1/2/C', 'AP 化学', 'AP 生物',
-                'AP 经济学 (微观/宏观)', 'AP 历史 (美国/世界/欧洲)', 'AP 心理学',
-                'AP 计算机科学 A/原理', 'AP 英语语言与写作', 'AP 英语文学与写作',
-                '其他AP科目 (请联系顾问)'
-            ],
-            // Unified sub-options for GCSE and IGCSE as their core subjects are very similar for tutoring purposes
-            'GCSE': [
-                'GCSE/IGCSE 数学', 'GCSE/IGCSE 英语 (第一语言/第二语言)', 'GCSE/IGCSE 物理',
-                'GCSE/IGCSE 化学', 'GCSE/IGCSE 生物', 'GCSE/IGCSE 历史', 'GCSE/IGCSE 地理',
-                'GCSE/IGCSE 商务学习', 'GCSE/IGCSE 经济学', '其他GCSE/IGCSE科目 (请联系顾问)'
-            ],
-            'IGCSE': [
-                'GCSE/IGCSE 数学', 'GCSE/IGCSE 英语 (第一语言/第二语言)', 'GCSE/IGCSE 物理',
-                'GCSE/IGCSE 化学', 'GCSE/IGCSE 生物', 'GCSE/IGCSE 历史', 'GCSE/IGCSE 地理',
-                'GCSE/IGCSE 商务学习', 'GCSE/IGCSE 经济学', '其他GCSE/IGCSE科目 (请联系顾问)'
-            ],
-            'A-LEVEL': [
-                'A-Level 数学 (或进阶数学)', 'A-Level 物理', 'A-Level 化学',
-                'A-Level 生物', 'A-Level 经济学', 'A-Level 商务',
-                'A-Level 计算机科学', 'A-Level 历史', 'A-Level 英语文学',
-                '其他A-Level科目 (请联系顾问)'
-            ]
-        };
-
-        const englishSubScores = {
-            'TOEFL': [
-                '113-120分', '102-112分', '79-101分', '46-78分', '32-45分', '<32分'
-            ],
-            'IELTS': [
-                '8.5-9.0分', '7.5-8.0分', '6.5-7.0分', '5.5-6.0分', '4.5-5.0分', '<4.5分'
-            ],
-            'TOEFL Junior': [
-                '600-620分 (Emerging)', '625-725分 (Progressing)',
-                '730-780分 (Expanding)', '785-860分 (Accomplished)',
-                '865-900分 (Superior)'
-            ],
-            'PTE Academic': [
-                '85-90分', '76-84分', '59-75分', '43-58分', '30-42分', '10-29分'
-            ],
-            '剑桥通用英语 KET (A2 Key)': ['A级', 'B级', 'C级'],
-            '剑桥通用英语 PET (B1 Preliminary)': ['A级', 'B级', 'C级'],
-            '剑桥通用英语 FCE (B2 First)': ['A级', 'B级', 'C级']
-        };
-
-        const courseDayOptionsMap = {
-            '1': [
-                '周一', '周二', '周三', '周四', '周五', '周六', '周日'
-            ],
-            '2': [
-                '周一/周三', '周二/周四', '周二/周五', '周三/周六', '周四/周日'
-            ],
-            '3': [
-                '周一/周三/周五', '周二/周四/周六'
-            ]
-        };
-
-        // Function to update selected class for radio options
-        function updateSelectedClass(groupName) {
-            console.log(`[DEBUG] updateSelectedClass: Called for group "${groupName}"`);
-            const radiosInGroup = document.querySelectorAll(`input[name="${groupName}"]`);
-            radiosInGroup.forEach(radio => {
-                const label = radio.closest('label');
-                if (label && label.classList.contains('selected')) {
-                    label.classList.remove('selected');
+                function updateSelectedClass(groupName) {
+                    const radiosInGroup = document.querySelectorAll(`input[name="${groupName}"]`);
+                    radiosInGroup.forEach(radio => {
+                        const label = radio.closest('label');
+                        if (label) {
+                            label.classList.remove('selected');
+                        }
+                    });
+                    const checkedRadio = document.querySelector(`input[name="${groupName}"]:checked`);
+                    if (checkedRadio) {
+                        const label = checkedRadio.closest('label');
+                        if (label) {
+                            label.classList.add('selected');
+                        }
+                    }
                 }
-            });
 
-            const checkedRadio = document.querySelector(`input[name="${groupName}"]:checked`);
-            if (checkedRadio) {
-                const label = checkedRadio.closest('label');
-                if (label) {
-                    label.classList.add('selected');
-                    console.log(`[DEBUG] updateSelectedClass: Added 'selected' to radio with value "${checkedRadio.value}"`);
-                } else {
-                    console.warn(`[WARN] updateSelectedClass: Label not found for checked radio with value "${checkedRadio.value}"`);
+                function generateRadioOptions(container, name, options, selectedValue = null) {
+                    container.innerHTML = '';
+                    options.forEach(optionText => {
+                        const label = document.createElement('label');
+                        label.className = 'radio-option';
+                        const input = document.createElement('input');
+                        input.type = 'radio';
+                        input.name = name;
+                        input.value = optionText;
+                        if (selectedValue === optionText) {
+                            input.checked = true;
+                        }
+                        label.appendChild(input);
+                        label.appendChild(document.createTextNode(` ${optionText}`));
+                        label.addEventListener('click', () => {
+                            input.checked = true;
+                            const changeEvent = new Event('change', { bubbles: true });
+                            input.dispatchEvent(changeEvent);
+                        });
+                        container.appendChild(label);
+                    });
+                    updateSelectedClass(name);
                 }
-            } else {
-                console.log(`[DEBUG] updateSelectedClass: No radio checked in group "${groupName}"`);
-            }
-        }
 
-        // Helper to generate radio options
-        function generateRadioOptions(container, name, options, selectedValue = null) {
-            console.log(`[DEBUG] generateRadioOptions: Generating options for group: ${name}, with options:`, options);
-            container.innerHTML = '';
-            options.forEach(optionText => {
-                const label = document.createElement('label');
-                label.className = 'radio-option';
-                const input = document.createElement('input');
-                input.type = 'radio';
-                input.name = name;
-                input.value = optionText;
-                if (selectedValue === optionText) {
-                    input.checked = true;
-                }
-                label.appendChild(input);
-                label.appendChild(document.createTextNode(` ${optionText}`));
-                container.appendChild(label);
-            });
-            // Attach event listeners to newly created radios
-            container.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
-                radio.addEventListener('change', () => updateSelectedClass(name));
-            });
-            // Initial selection styling for newly generated radios
-            updateSelectedClass(name);
-        }
+                document.querySelectorAll('input[name="program"]').forEach(radio => {
+                    radio.addEventListener('change', (event) => {
+                        const selectedProgram = event.target.value;
+                        updateSelectedClass('program');
 
-        // Event listener for Question 1 (main program selection)
-        document.querySelectorAll('input[name="program"]').forEach(radio => {
-            radio.addEventListener('change', (event) => {
-                const selectedProgram = event.target.value;
+                        if (systemPrograms.includes(selectedProgram)) {
+                            question1SubSection.classList.remove('hidden');
+                            if (subOptions[selectedProgram]) {
+                                generateRadioOptions(subProgramOptionsDiv, 'sub_program', subOptions[selectedProgram]);
+                            } else {
+                                subProgramOptionsDiv.innerHTML = '<p class="text-red-500">无法加载具体科目选项。</p>';
+                            }
+                        } else {
+                            question1SubSection.classList.add('hidden');
+                            subProgramOptionsDiv.innerHTML = '';
+                        }
+                    });
+                });
+
+                document.querySelectorAll('input[name="english_certificate"]').forEach(radio => {
+                    radio.addEventListener('change', (event) => {
+                        const selectedCertificate = event.target.value;
+                        updateSelectedClass('english_certificate');
+
+                        if (englishCertificatesWithSubLevels.includes(selectedCertificate)) {
+                            question5SubSection.classList.remove('hidden');
+                            if (englishSubScores[selectedCertificate]) {
+                                generateRadioOptions(englishCertificateSubOptionsDiv, 'english_sub_score', englishSubScores[selectedCertificate]);
+                            } else {
+                                englishCertificateSubOptionsDiv.innerHTML = '<p class="text-red-500">无法加载分数/等级选项。</p>';
+                            }
+                        } else {
+                            question5SubSection.classList.add('hidden');
+                            englishCertificateSubOptionsDiv.innerHTML = '';
+                        }
+                    });
+                });
+                
+                document.querySelectorAll('input[name="core_need"], input[name="grade_level"], input[name="start_time"], input[name="course_frequency"], input[name="homework_frequency"], input[name="contact_method"]').forEach(radio => {
+                    radio.addEventListener('change', (event) => {
+                        updateSelectedClass(event.target.name);
+                    });
+                });
+
+
+                document.getElementById('course-frequency-options').addEventListener('change', (event) => {
+                    const selectedFrequency = document.querySelector('input[name="course_frequency"]:checked').value;
+                    updateSelectedClass('course_frequency');
+                    question6SubSection.classList.remove('hidden');
+                    generateRadioOptions(courseDaysOptionsDiv, 'course_days', courseDayOptionsMap[selectedFrequency]);
+                    question7MainSection.classList.remove('hidden');
+                    const homeworkFreqValue = 7 - parseInt(selectedFrequency);
+                    homeworkFrequencyOptionsDiv.innerHTML = `<label class="radio-option selected"><input type="radio" name="homework_frequency" value="${homeworkFreqValue}" checked> ${homeworkFreqValue}次</label>`;
+                });
+
+                contactMethodOptions.addEventListener('change', (event) => {
+                    const selectedMethod = document.querySelector('input[name="contact_method"]:checked').value;
+                    updateSelectedClass('contact_method');
+                    contactDetailInputContainer.classList.remove('hidden');
+                    let labelText = '';
+                    let placeholderText = '';
+                    switch (selectedMethod) {
+                        case '电话':
+                            labelText = '您的电话号码：';
+                            placeholderText = '请填写您的电话号码';
+                            break;
+                        case '微信':
+                            labelText = '您的微信号：';
+                            placeholderText = '请填写您的微信号';
+                            break;
+                        case '电子邮箱':
+                            labelText = '您的电子邮箱：';
+                            placeholderText = '请填写您的电子邮箱地址';
+                            break;
+                        case '其他':
+                            labelText = '您的其他联系方式 (请说明)：';
+                            placeholderText = '请填写您的其他联系方式';
+                            break;
+                    }
+                    contactDetailLabel.textContent = labelText;
+                    contactDetailInput.placeholder = placeholderText;
+                    contactDetailInput.value = '';
+                });
+
+                submitFormButton.addEventListener('click', () => {
+                    const selectedProgram = document.querySelector('input[name="program"]:checked')?.value;
+                    let selectedSubProgram = document.querySelector('input[name="sub_program"]:checked')?.value;
+                    const selectedCoreNeed = document.querySelector('input[name="core_need"]:checked')?.value;
+                    const selectedGradeLevel = document.querySelector('input[name="grade_level"]:checked')?.value;
+                    const selectedStartTime = document.querySelector('input[name="start_time"]:checked')?.value;
+                    const selectedEnglishCertificate = document.querySelector('input[name="english_certificate"]:checked')?.value;
+                    let selectedEnglishSubScore = document.querySelector('input[name="english_sub_score"]:checked')?.value;
+                    const selectedCourseFrequency = document.querySelector('input[name="course_frequency"]:checked')?.value;
+                    const selectedCourseDaysRaw = document.querySelector('input[name="course_days"]:checked')?.value;
+                    const selectedHomeworkFrequency = document.querySelector('input[name="homework_frequency"]:checked')?.value;
+
+                    let allRequiredFieldsSelected = true;
+                    let currentErrorMessage = '';
+                    if (!selectedProgram) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择学员需要提升的项目。'; }
+                    else if (systemPrograms.includes(selectedProgram) && !selectedSubProgram) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择具体课程或考试科目。'; }
+                    else if (!selectedCoreNeed) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择学员最核心的需求。'; }
+                    else if (!selectedGradeLevel) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择学员当前年级。'; }
+                    else if (!selectedStartTime) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择期望的开课时间。'; }
+                    else if (!selectedEnglishCertificate) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择学员已获得的英语水平证书。'; }
+                    else if (englishCertificatesWithSubLevels.includes(selectedEnglishCertificate) && !selectedEnglishSubScore) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择您的英语证书分数/等级。'; }
+                    else if (!selectedCourseFrequency) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择课程辅导频率。'; }
+                    else if (!selectedCourseDaysRaw) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择期望的上课时间。'; }
+                    else if (!selectedHomeworkFrequency) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择作业辅导频率。'; }
+
+                    submissionMessage.classList.remove('hidden');
+                    errorMessageDisplay.classList.add('hidden');
+                    summaryHeader.classList.add('hidden');
+                    summaryDetails.innerHTML = '';
+                    summaryDetails.classList.add('hidden');
+                    timetableHeader.classList.add('hidden');
+                    timetableDisplay.innerHTML = '';
+                    timetableDisplay.classList.add('hidden');
+                    contactHeader.classList.add('hidden');
+                    contactInputArea.classList.add('hidden');
+
+                    if (!allRequiredFieldsSelected) {
+                        errorMessageDisplay.classList.remove('hidden');
+                        errorMessageDisplay.textContent = currentErrorMessage;
+                        submissionMessage.style.backgroundColor = '#fee2e2';
+                        submissionMessage.style.color = '#991b1b';
+                        submissionMessage.style.borderColor = '#fca5a5';
+                        return;
+                    }
+
+                    submissionMessage.style.backgroundColor = '#ecfdf5';
+                    submissionMessage.style.color = '#065f46';
+                    submissionMessage.style.borderColor = '#a7f3d0';
+
+                    summaryHeader.classList.remove('hidden');
+                    summaryDetails.classList.remove('hidden');
+                    let summaryHtml = `
+                        <div class="summary-item">
+                            <span class="summary-label">目标项目：</span>
+                            <span class="summary-value">${selectedProgram}</span>
+                        </div>
+                    `;
+                    if (selectedSubProgram) {
+                        summaryHtml += `
+                            <div class="summary-item">
+                                <span class="summary-label">具体科目/课程：</span>
+                                <span class="summary-value">${selectedSubProgram}</span>
+                            </div>
+                        `;
+                    }
+                    summaryHtml += `
+                        <div class="summary-item">
+                            <span class="summary-label">核心需求：</span>
+                            <span class="summary-value">${selectedCoreNeed}</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">学员当前年级：</span>
+                            <span class="summary-value">${selectedGradeLevel}</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">期望开课：</span>
+                            <span class="summary-value">${selectedStartTime}</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">英语证书：</span>
+                            <span class="summary-value">${selectedEnglishCertificate}`;
+                    if (selectedEnglishSubScore) {
+                        summaryHtml += ` (${selectedEnglishSubScore})`;
+                    }
+                    summaryHtml += `</span></div>
+                        <div class="summary-item">
+                            <span class="summary-label">课程辅导频率：</span>
+                            <span class="summary-value">每周${selectedCourseFrequency}次</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">作业辅导频率：</span>
+                            <span class="summary-value">每周${selectedHomeworkFrequency}次</span>
+                        </div>
+                    `;
+                    summaryDetails.innerHTML = summaryHtml;
+
+                    const timetable = {};
+                    weekdays.forEach(day => timetable[day] = '休息');
+                    const courseDaysArray = selectedCourseDaysRaw.split('/').map(d => d.trim());
+                    courseDaysArray.forEach(day => timetable[day] = '课程辅导 (2小时)');
+                    const remainingDays = weekdays.filter(day => !courseDaysArray.includes(day));
+                    const homeworkCount = parseInt(selectedHomeworkFrequency);
+                    for (let i = 0; i < homeworkCount; i++) {
+                        if (remainingDays[i]) {
+                            timetable[remainingDays[i]] = '作业辅导 (30分钟)';
+                        }
+                    }
+
+                    let timetableHtml = `<div class="timetable-grid">`;
+                    weekdays.forEach(day => {
+                        timetableHtml += `<div class="timetable-header">${day}</div>`;
+                    });
+                    weekdays.forEach(day => {
+                        let cellClass = 'timetable-cell';
+                        if (timetable[day].includes('课程辅导')) {
+                            cellClass += ' course-cell';
+                        } else if (timetable[day].includes('作业辅导')) {
+                            cellClass += ' homework-cell';
+                        }
+                        timetableHtml += `<div class="${cellClass}">${timetable[day]}</div>`;
+                    });
+                    timetableHtml += `</div>`;
+                    timetableDisplay.innerHTML = timetableHtml;
+                    timetableHeader.classList.remove('hidden');
+                    timetableDisplay.classList.remove('hidden');
+
+                    contactHeader.classList.remove('hidden');
+                    contactInputArea.classList.remove('hidden');
+                });
+
+                submitContactInfoButton.addEventListener('click', async () => {
+                    const selectedContactMethodRadio = document.querySelector('input[name="contact_method"]:checked');
+                    const otherContactRadio = document.querySelector('input[name="other_contact"]:checked');
+                    let finalContactMethod = '';
+                    if (selectedContactMethodRadio) {
+                        finalContactMethod = selectedContactMethodRadio.value;
+                    } else if (otherContactRadio) {
+                        finalContactMethod = otherContactRadio.value;
+                    }
+                    const contactDetail = contactDetailInput.value.trim();
+
+                    let contactInfoValid = true;
+                    let contactErrorMessage = '';
+                    if (!finalContactMethod) { contactInfoValid = false; contactErrorMessage = '请选择您的联系方式。'; }
+                    else if (!contactDetail) { contactInfoValid = false; contactErrorMessage = `请填写您的${finalContactMethod}信息。`; }
+
+                    if (!contactInfoValid) {
+                        errorMessageDisplay.classList.remove('hidden');
+                        errorMessageDisplay.textContent = contactErrorMessage;
+                        submissionMessage.style.backgroundColor = '#fee2e2';
+                        submissionMessage.style.color = '#991b1b';
+                        submissionMessage.style.borderColor = '#fca5a5';
+                        return;
+                    }
+
+                    const formData = {
+                        program: document.querySelector('input[name="program"]:checked')?.value,
+                        sub_program: document.querySelector('input[name="sub_program"]:checked')?.value || '',
+                        core_need: document.querySelector('input[name="core_need"]:checked')?.value,
+                        grade_level: document.querySelector('input[name="grade_level"]:checked')?.value,
+                        start_time: document.querySelector('input[name="start_time"]:checked')?.value,
+                        english_certificate: document.querySelector('input[name="english_certificate"]:checked')?.value,
+                        english_sub_score: document.querySelector('input[name="english_sub_score"]:checked')?.value || '',
+                        course_frequency: document.querySelector('input[name="course_frequency"]:checked')?.value,
+                        course_days: document.querySelector('input[name="course_days"]:checked')?.value,
+                        homework_frequency: document.querySelector('input[name="homework_frequency"]:checked')?.value,
+                        contact_method: finalContactMethod,
+                        contact_detail: contactDetail
+                    };
+
+                    finalContactMessage.textContent = '正在提交信息，请稍候...';
+                    finalContactMessage.classList.remove('hidden');
+                    submitContactInfoButton.disabled = true;
+
+                    const formspreeUrl = 'https://formspree.io/f/xldngdge';
+
+                    try {
+                        const response = await fetch(formspreeUrl, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify(formData),
+                        });
+                        if (response.ok) {
+                            submissionMessage.style.backgroundColor = '#ecfdf5';
+                            submissionMessage.style.color = '#065f46';
+                            submissionMessage.style.borderColor = '#a7f3d0';
+                            errorMessageDisplay.classList.add('hidden');
+                            let existingContactSummary = Array.from(summaryDetails.querySelectorAll('.summary-item')).find(item =>
+                                item.querySelector('.summary-label')?.textContent.includes('联系方式：')
+                            );
+                            if (!existingContactSummary) {
+                                const contactSummaryHtml = `
+                                    <div class="summary-item">
+                                        <span class="summary-label">联系方式：</span>
+                                        <span class="summary-value">${finalContactMethod} (${contactDetail})</span>
+                                    </div>
+                                `;
+                                summaryDetails.innerHTML += contactSummaryHtml;
+                            } else {
+                                existingContactSummary.querySelector('.summary-value').textContent = `${finalContactMethod} (${contactDetail})`;
+                            }
+                            finalContactMessage.textContent = '感谢您的选择！您的信息已提交，我们的专业顾问将尽快与您联系，提供定制化的课程建议。';
+                            submitContactInfoButton.classList.add('hidden');
+                            contactDetailInputContainer.classList.add('hidden');
+                            contactMethodOptions.classList.add('hidden');
+                            contactHeader.classList.add('hidden');
+                        } else {
+                            const errorData = await response.json();
+                            errorMessageDisplay.classList.remove('hidden');
+                            errorMessageDisplay.textContent = `信息提交失败：${errorData.error || '服务器错误'}`;
+                            submissionMessage.style.backgroundColor = '#fee2e2';
+                            submissionMessage.style.color = '#991b1b';
+                            submissionMessage.style.borderColor = '#fca5a5';
+                            finalContactMessage.classList.add('hidden');
+                        }
+                    } catch (error) {
+                        errorMessageDisplay.classList.remove('hidden');
+                        errorMessageDisplay.textContent = '信息提交失败：网络错误或连接问题。';
+                        submissionMessage.style.backgroundColor = '#fee2e2';
+                        submissionMessage.style.color = '#991b1b';
+                        submissionMessage.style.borderColor = '#fca5a5';
+                        finalContactMessage.classList.add('hidden');
+                    }
+                });
+
+                // Initial setup
                 updateSelectedClass('program');
-
-                if (systemPrograms.includes(selectedProgram)) {
-                    question1SubSection.classList.remove('hidden');
-                    if (subOptions[selectedProgram]) {
-                        generateRadioOptions(subProgramOptionsDiv, 'sub_program', subOptions[selectedProgram]);
-                    } else {
-                        subProgramOptionsDiv.innerHTML = '<p class="text-red-500">无法加载具体科目选项。</p>';
-                    }
-                } else {
-                    question1SubSection.classList.add('hidden');
-                    subProgramOptionsDiv.innerHTML = '';
-                    const currentSubProgramRadio = document.querySelector('input[name="sub_program"]:checked');
-                    if (currentSubProgramRadio) {
-                        currentSubProgramRadio.checked = false;
-                        updateSelectedClass('sub_program');
-                    }
-                }
-            });
-        });
-
-        // Event listener for Question 6 (Course Frequency)
-        document.getElementById('course-frequency-options').addEventListener('change', (event) => {
-            const selectedFrequency = event.target.value;
-            updateSelectedClass('course_frequency');
-
-            question6SubSection.classList.remove('hidden');
-            generateRadioOptions(courseDaysOptionsDiv, 'course_days', courseDayOptionsMap[selectedFrequency]);
-
-            question7MainSection.classList.remove('hidden'); // Show Q7
-            const homeworkFreqValue = 7 - parseInt(selectedFrequency);
-            homeworkFrequencyOptionsDiv.innerHTML = `
-                <label class="radio-option">
-                    <input type="radio" name="homework_frequency" value="${homeworkFreqValue}" checked> ${homeworkFreqValue}次
-                </label>
-            `;
-            updateSelectedClass('homework_frequency');
-        });
-
-        // Event listeners for other questions (renumbered)
-        document.getElementById('needs-options').addEventListener('change', () => updateSelectedClass('core_need'));
-        document.getElementById('grade-level-options').addEventListener('change', () => updateSelectedClass('grade_level'));
-        document.getElementById('start-time-options').addEventListener('change', () => updateSelectedClass('start_time'));
-        document.getElementById('homework-frequency-options').addEventListener('change', () => updateSelectedClass('homework_frequency'));
-
-        // Event listener for Question 5 (English Certificate)
-        document.querySelectorAll('input[name="english_certificate"]').forEach(radio => {
-            radio.addEventListener('change', (event) => {
-                const selectedCertificate = event.target.value;
+                updateSelectedClass('core_need');
+                updateSelectedClass('grade_level');
+                updateSelectedClass('start_time');
                 updateSelectedClass('english_certificate');
+                updateSelectedClass('course_frequency');
+                updateSelectedClass('contact_method');
+                updateSelectedClass('other_contact');
 
-                if (englishCertificatesWithSubLevels.includes(selectedCertificate)) {
-                    question5SubSection.classList.remove('hidden');
-                    if (englishSubScores[selectedCertificate]) {
-                        generateRadioOptions(englishCertificateSubOptionsDiv, 'english_sub_score', englishSubScores[selectedCertificate]);
-                    } else {
-                        englishCertificateSubOptionsDiv.innerHTML = '<p class="text-red-500">无法加载分数/等级选项。</p>';
-                    }
-                } else {
-                    question5SubSection.classList.add('hidden');
-                    englishCertificateSubOptionsDiv.innerHTML = '';
-                    const currentEnglishSubScoreRadio = document.querySelector('input[name="english_sub_score"]:checked');
-                    if (currentEnglishSubScoreRadio) {
-                        currentEnglishSubScoreRadio.checked = false;
-                        updateSelectedClass('english_sub_score');
-                    }
-                }
-            });
+                question1SubSection.classList.add('hidden');
+                question5SubSection.classList.add('hidden');
+                question6SubSection.classList.add('hidden');
+                question7MainSection.classList.add('hidden');
+
+                submissionMessage.classList.add('hidden');
+                errorMessageDisplay.classList.add('hidden');
+                summaryHeader.classList.add('hidden');
+                summaryDetails.classList.add('hidden');
+                timetableHeader.classList.add('hidden');
+                timetableDisplay.classList.add('hidden');
+                contactHeader.classList.add('hidden');
+                contactInputArea.classList.add('hidden');
+                finalContactMessage.classList.add('hidden');
+            } catch (error) {
+                console.error("A critical error occurred:", error);
+                document.body.innerHTML = `<div style="padding: 20px; font-family: sans-serif; color: red;"><h1>脚本加载失败</h1><p>页面脚本未能正确加载，可能是由于语法错误或网络问题。请检查浏览器控制台以获取更多信息。</p><pre>${error.stack}</pre></div>`;
+            }
         });
-
-        // NEW: Event listener for Contact Method selection
-        contactMethodOptions.addEventListener('change', (event) => {
-            const selectedMethod = event.target.value;
-            updateSelectedClass('contact_method');
-
-            contactDetailInputContainer.classList.remove('hidden');
-
-            let labelText = '请填写您的联系方式：';
-            let placeholderText = '';
-
-            switch (selectedMethod) {
-                case '电话':
-                    labelText = '您的电话号码：';
-                    placeholderText = '请填写您的电话号码';
-                    break;
-                case '微信':
-                    labelText = '您的微信号：';
-                    placeholderText = '请填写您的微信号';
-                    break;
-                case '电子邮箱':
-                    labelText = '您的电子邮箱：';
-                    placeholderText = '请填写您的电子邮箱地址';
-                    break;
-                case '其他':
-                    labelText = '您的其他联系方式 (请说明)：';
-                    placeholderText = '请填写您的其他联系方式';
-                    break;
-            }
-            contactDetailLabel.textContent = labelText;
-            contactDetailInput.placeholder = placeholderText;
-            contactDetailInput.value = ''; // Clear previous input
-        });
-
-        // Handle initial form submission (questions 1-7)
-        submitFormButton.addEventListener('click', () => {
-            console.log('[DEBUG] Submit form button clicked.');
-            const selectedProgram = document.querySelector('input[name="program"]:checked')?.value;
-            let selectedSubProgram = null;
-            if (systemPrograms.includes(selectedProgram)) {
-                selectedSubProgram = document.querySelector('input[name="sub_program"]:checked')?.value;
-            }
-            const selectedCoreNeed = document.querySelector('input[name="core_need"]:checked')?.value;
-            const selectedGradeLevel = document.querySelector('input[name="grade_level"]:checked')?.value;
-            const selectedStartTime = document.querySelector('input[name="start_time"]:checked')?.value;
-            const selectedEnglishCertificate = document.querySelector('input[name="english_certificate"]:checked')?.value;
-            let selectedEnglishSubScore = null;
-            if (englishCertificatesWithSubLevels.includes(selectedEnglishCertificate)) {
-                selectedEnglishSubScore = document.querySelector('input[name="english_sub_score"]:checked')?.value;
-            }
-            const selectedCourseFrequency = document.querySelector('input[name="course_frequency"]:checked')?.value;
-            const selectedCourseDaysRaw = document.querySelector('input[name="course_days"]:checked')?.value;
-            const selectedHomeworkFrequency = document.querySelector('input[name="homework_frequency"]:checked')?.value;
-
-            let allRequiredFieldsSelected = true;
-            let currentErrorMessage = '';
-
-            // Validation for questions 1-7
-            if (!selectedProgram) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择学员需要提升的项目。'; }
-            else if (systemPrograms.includes(selectedProgram) && !selectedSubProgram) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择具体课程或考试科目。'; }
-            else if (!selectedCoreNeed) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择学员最核心的需求。'; }
-            else if (!selectedGradeLevel) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择学员当前年级。'; }
-            else if (!selectedStartTime) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择期望的开课时间。'; }
-            else if (!selectedEnglishCertificate) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择学员已获得的英语水平证书。'; }
-            else if (englishCertificatesWithSubLevels.includes(selectedEnglishCertificate) && !selectedEnglishSubScore) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择您的英语证书分数/等级。'; }
-            else if (!selectedCourseFrequency) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择课程辅导频率。'; }
-            else if (!selectedCourseDaysRaw) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择期望的上课时间。'; }
-            else if (!selectedHomeworkFrequency) { allRequiredFieldsSelected = false; currentErrorMessage = '请选择作业辅导频率。'; }
-
-            console.log('[DEBUG] Validation result for Q1-7:', allRequiredFieldsSelected ? 'Passed' : 'Failed', 'Error:', currentErrorMessage);
-
-            // Reset message box state and hide all content initially
-            submissionMessage.classList.remove('hidden');
-            submissionMessage.style.backgroundColor = '';
-            submissionMessage.style.color = '';
-            submissionMessage.style.borderColor = '';
-
-            errorMessageDisplay.classList.add('hidden');
-            summaryHeader.classList.add('hidden');
-            summaryDetails.innerHTML = '';
-            summaryDetails.classList.add('hidden');
-            timetableDisplay.innerHTML = '';
-            timetableDisplay.classList.add('hidden');
-            contactInfoSectionAfterSummary.classList.add('hidden'); // Ensure contact section is hidden
-            finalContactMessage.classList.add('hidden');
-
-
-            if (!allRequiredFieldsSelected) {
-                errorMessageDisplay.classList.remove('hidden');
-                errorMessageDisplay.textContent = currentErrorMessage;
-                submissionMessage.style.backgroundColor = '#fee2e2';
-                submissionMessage.style.color = '#991b1b';
-                submissionMessage.style.borderColor = '#fca5a5';
-                console.log('[DEBUG] Form submission failed due to validation errors (Q1-7).');
-                return;
-            }
-
-            // If Q1-7 validation passes:
-            // Apply success styles
-            submissionMessage.style.backgroundColor = '#ecfdf5';
-            submissionMessage.style.color = '#065f46';
-            submissionMessage.style.borderColor = '#a7f3d0';
-
-            // Show and populate summary details
-            summaryHeader.classList.remove('hidden');
-            summaryDetails.classList.remove('hidden');
-            let summaryHtml = `
-                <div class="summary-item">
-                    <span class="summary-label">目标项目：</span>
-                    <span class="summary-value">${selectedProgram}</span>
-                </div>
-            `;
-            if (selectedSubProgram) {
-                summaryHtml += `
-                    <div class="summary-item">
-                        <span class="summary-label">具体科目/课程：</span>
-                        <span class="summary-value">${selectedSubProgram}</span>
-                    </div>
-                `;
-            }
-            summaryHtml += `
-                <div class="summary-item">
-                    <span class="summary-label">核心需求：</span>
-                    <span class="summary-value">${selectedCoreNeed}</span>
-                </div>
-                <div class="summary-item">
-                    <span class="summary-label">学员当前年级：</span>
-                    <span class="summary-value">${selectedGradeLevel}</span>
-                </div>
-                <div class="summary-item">
-                    <span class="summary-label">期望开课：</span>
-                    <span class="summary-value">${selectedStartTime}</span>
-                </div>
-                <div class="summary-item">
-                    <span class="summary-label">英语证书：</span>
-                    <span class="summary-value">${selectedEnglishCertificate}`;
-            if (selectedEnglishSubScore) {
-                summaryHtml += ` (${selectedEnglishSubScore})`;
-            }
-            summaryHtml += `</span></div>
-                <div class="summary-item">
-                    <span class="summary-label">课程辅导频率：</span>
-                    <span class="summary-value">每周${selectedCourseFrequency}次</span>
-                </div>
-                <div class="summary-item">
-                    <span class="summary-label">作业辅导频率：</span>
-                    <span class="summary-value">每周${selectedHomeworkFrequency}次</span>
-                </div>
-            `;
-            summaryDetails.innerHTML = summaryHtml;
-            console.log('[DEBUG] Summary details populated.');
-
-            // Generate Timetable
-            const timetable = {};
-            weekdays.forEach(day => timetable[day] = '休息');
-
-            const courseDaysArray = selectedCourseDaysRaw.split('/').map(d => d.trim());
-            courseDaysArray.forEach(day => {
-                timetable[day] = '课程辅导 (2小时)';
-            });
-
-            const remainingDays = weekdays.filter(day => !courseDaysArray.includes(day));
-            const homeworkCount = parseInt(selectedHomeworkFrequency);
-            for (let i = 0; i < homeworkCount; i++) {
-                if (remainingDays[i]) {
-                    timetable[remainingDays[i]] = '作业辅导 (30分钟)';
-                }
-            }
-
-            let timetableHtml = `<h3 class="text-lg font-semibold text-gray-700 mb-4 mt-8">学员每周学习安排概览：</h3>
-                                 <div class="timetable-grid">`;
-            weekdays.forEach(day => {
-                timetableHtml += `<div class="timetable-header">${day}</div>`;
-            });
-            weekdays.forEach(day => {
-                let cellClass = 'timetable-cell';
-                if (timetable[day].includes('课程辅导')) {
-                    cellClass += ' course-cell';
-                } else if (timetable[day].includes('作业辅导')) {
-                    cellClass += ' homework-cell';
-                }
-                timetableHtml += `<div class="${cellClass}">${timetable[day]}</div>`;
-            });
-            timetableHtml += `</div>`;
-            timetableDisplay.innerHTML = timetableHtml;
-            timetableDisplay.classList.remove('hidden'); // Ensure timetable is visible
-            console.log('[DEBUG] Timetable generated and displayed.');
-
-            // Now, show the contact info section
-            contactInfoSectionAfterSummary.classList.remove('hidden');
-            console.log('[DEBUG] Contact info section displayed after summary.');
-        });
-
-        // Handle contact info submission (after summary/timetable are shown)
-        submitContactInfoButton.addEventListener('click', () => {
-            console.log('[DEBUG] Submit contact info button clicked.');
-            const selectedContactMethod = document.querySelector('input[name="contact_method"]:checked')?.value;
-            const contactDetail = contactDetailInput.value.trim();
-
-            let contactInfoValid = true;
-            let contactErrorMessage = '';
-
-            if (!selectedContactMethod) { contactInfoValid = false; contactErrorMessage = '请选择您的联系方式。'; }
-            else if (!contactDetail) { contactInfoValid = false; contactErrorMessage = `请填写您的${selectedContactMethod}信息。`; }
-
-            if (!contactInfoValid) {
-                errorMessageDisplay.classList.remove('hidden'); // Use the same error display
-                errorMessageDisplay.textContent = contactErrorMessage;
-                // Optionally change message box style to error state for contact section
-                submissionMessage.style.backgroundColor = '#fee2e2';
-                submissionMessage.style.color = '#991b1b';
-                submissionMessage.style.borderColor = '#fca5a5';
-                console.log('[DEBUG] Contact info submission failed due to validation errors.');
-                return;
-            }
-
-            // If contact info is valid, update the summary with contact details and show final message
-            // First, re-apply success styling to the message box
-            submissionMessage.style.backgroundColor = '#ecfdf5';
-            submissionMessage.style.color = '#065f46';
-            submissionMessage.style.borderColor = '#a7f3d0';
-            errorMessageDisplay.classList.add('hidden'); // Hide any previous error message
-
-            // Append contact info to summary if it's not already there
-            let existingContactSummary = summaryDetails.querySelector('.summary-item .summary-label:contains("联系方式：")');
-            if (!existingContactSummary) {
-                 const contactSummaryHtml = `
-                    <div class="summary-item">
-                        <span class="summary-label">联系方式：</span>
-                        <span class="summary-value">${selectedContactMethod} (${contactDetail})</span>
-                    </div>
-                `;
-                summaryDetails.innerHTML += contactSummaryHtml;
-            } else {
-                // Update existing contact info if re-submitted
-                existingContactSummary.nextElementSibling.textContent = `${selectedContactMethod} (${contactDetail})`;
-            }
-
-            finalContactMessage.classList.remove('hidden'); // Show the final contact message
-            submitContactInfoButton.classList.add('hidden'); // Hide the contact info submission button
-            contactDetailInputContainer.classList.add('hidden'); // Hide the input field
-            contactMethodOptions.classList.add('hidden'); // Hide contact method radios
-            document.querySelector('#contact-info-section-after-summary .question-title').classList.add('hidden'); // Hide contact section title
-            console.log('[DEBUG] Contact info successfully submitted and final message displayed.');
-        });
-
-
-        // Initial setup to hide conditional sections and clear any lingering selected styles
-        updateSelectedClass('program');
-        updateSelectedClass('core_need');
-        updateSelectedClass('grade_level');
-        updateSelectedClass('start_time');
-        updateSelectedClass('english_certificate');
-        updateSelectedClass('course_frequency');
-        updateSelectedClass('contact_method'); // For contact method radios
-
-        // Hide all conditional sections initially
-        question1SubSection.classList.add('hidden');
-        question5SubSection.classList.add('hidden');
-        question6SubSection.classList.add('hidden');
-        question7MainSection.classList.add('hidden'); // Hide Q7 (homework frequency) initially
-
-        // Hide all submission message content initially
-        submissionMessage.classList.add('hidden'); // Hide the entire message box
-        errorMessageDisplay.classList.add('hidden');
-        summaryHeader.classList.add('hidden');
-        summaryDetails.classList.add('hidden');
-        timetableDisplay.classList.add('hidden');
-        contactInfoSectionAfterSummary.classList.add('hidden'); // Ensure contact section is hidden
-        finalContactMessage.classList.add('hidden');
-
-        console.log("Initial setup complete.");
     </script>
 </body>
-</html>
+</ht
